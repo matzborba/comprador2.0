@@ -1,0 +1,7 @@
+.active {
+  @apply rounded-lg bg-neutra-800 py-1.5 px-3 text-center text-white;
+}
+
+.link {
+  @apply py-1.5 px-3 text-center font-semibold text-neutra-800;
+}
