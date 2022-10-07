@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.RCP svg {
+  width: 80px !important;
+}
+
+.RCP {
+  width: auto !important;
+}
+
+svg {
+  height: auto !important;
+  max-width: none !important;
+}

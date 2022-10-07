@@ -2,7 +2,7 @@ import { Header } from "../../organisms/header/Header";
 
 function Dashboard({ children }) {
   return (
-    <div className="mx-auto h-full w-full max-w-[1072px] ">
+    <div className="flex h-full w-full flex-col justify-center px-10">
       <Header />
       {children}
     </div>

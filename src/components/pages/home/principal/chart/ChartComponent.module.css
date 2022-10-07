@@ -1,0 +1,7 @@
+.chart_container {
+  @apply w-full;
+}
+
+.chart_container canvas {
+  @apply right-0 flex max-h-64 w-full;
+}

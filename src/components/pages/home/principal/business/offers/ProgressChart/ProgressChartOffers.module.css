@@ -1,0 +1,7 @@
+.RCP {
+  @apply flex justify-center;
+}
+
+svg {
+  @apply h-[80px] max-w-[80px] text-center;
+}

@@ -1,9 +1,11 @@
 import { ActionCardAside } from "./actionCard/ActionCardAside";
+import { ActionInfo } from "./actionInfo/ActionInfo";
 
 function Aside() {
   return (
-    <div>
+    <div className="flex w-full flex-col gap-4">
       <ActionCardAside />
+      <ActionInfo />
     </div>
   );
 }
