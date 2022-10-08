@@ -1,7 +1,10 @@
-function Button({ text }) {
+function Button({ text, onClick }) {
   return (
     <div className="">
-      <button className=" flex h-8 w-28 cursor-pointer select-none items-center gap-3 rounded-md border border-neutra-400 px-4 text-sm outline-none">
+      <button
+        onClick={onClick}
+        className=" flex h-8 w-28 cursor-pointer select-none items-center gap-3 rounded-md border border-neutra-400 px-4 text-sm outline-none"
+      >
         <span>{text}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

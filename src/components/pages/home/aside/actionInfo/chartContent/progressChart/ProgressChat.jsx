@@ -44,7 +44,7 @@ function ProgressChart() {
           strokeColor={getColorByStatus(task.status)}
           strokeLinecap="round"
           trackStrokeWidth={18}
-          trackStrokeColor="fff"
+          trackStrokeColor="white"
         >
           <div className="absolute top-4 my-auto mx-0 h-full w-full justify-center text-center">
             <p className="font-semibold">{task.value}</p>

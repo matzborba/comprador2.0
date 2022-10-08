@@ -11,7 +11,7 @@ function ProgressChartOffers({ text, value, color }) {
         strokeColor={color}
         strokeLinecap="round"
         trackStrokeWidth={18}
-        trackStrokeColor="fff"
+        trackStrokeColor="white"
       >
         <div className="righ-0 absolute top-4 my-auto mx-0 w-full justify-center text-center">
           <p className="font-semibold">{value}</p>
