@@ -3,7 +3,7 @@ import { PurchaseInfo } from "./purchases/PurchaseInfo";
 
 function BusinessInfo() {
   return (
-    <div className="h-max-[210px] flex w-full gap-5">
+    <div className="mt-4 flex w-full items-start gap-5">
       <PurchaseInfo />
       <OffersInfo />
     </div>

@@ -45,27 +45,27 @@ function ChartComponent() {
     labels,
     datasets: [
       {
-        type: "line",
-        label: "Dataset 1",
-        borderColor: "rgb(255, 99, 132)",
-        borderWidth: 2,
-        fill: false,
+        type: "bar",
+        backgroundColor: "#46C569",
+        label: "",
         data: labels.map(() => faker.datatype.number({ min: 0, max: 80 })),
-        tension: 0.5,
       },
       {
         type: "bar",
-        label: "Dataset 2",
-        backgroundColor: "rgb(75, 192, 192)",
+        label: "Comprador",
+        backgroundColor: "#E93842",
         data: labels.map(() => faker.datatype.number({ min: 0, max: 80 })),
         borderColor: "white",
         borderWidth: 2,
       },
       {
-        type: "bar",
-        label: "Dataset 3",
-        backgroundColor: "rgb(53, 162, 235)",
+        type: "line",
+        label: "Escala",
+        borderColor: "#52AFE3",
+        borderWidth: 2,
+        fill: false,
         data: labels.map(() => faker.datatype.number({ min: 0, max: 80 })),
+        tension: 0.5,
       },
       {
         type: "line",
@@ -73,8 +73,9 @@ function ChartComponent() {
         borderColor: "#61646B",
         borderWidth: 2,
         fill: false,
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 80 })),
+        data: labels.map(() => 40),
         tension: 0.5,
+        active: true,
       },
     ],
   };
@@ -85,8 +86,19 @@ function ChartComponent() {
         align: "end",
         labels: { usePointStyle: true },
       },
+      tooltip: {
+        titleColor: "#6C757D",
+        bodyColor: "#6C757D",
+        bodyFont: { size: 14 },
+        backgroundColor: "#fff",
+        titleFont: { weight: "600", size: 14 },
+        usePointStyle: true,
+        boxPadding: 2,
+      },
     },
-    scales: {},
+    layout: {
+      autopadding: false,
+    },
   };
 
   return (

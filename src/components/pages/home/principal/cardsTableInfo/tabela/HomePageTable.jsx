@@ -45,8 +45,8 @@ function HomePageTable() {
           Ver todas as ofertas
         </Link>
       </div>
-      <table className="relative my-2 h-full w-full">
-        <tbody>
+      <table className="relative my-2 h-[268px]">
+        <thead>
           <tr className="relative w-full bg-neutra-200">
             <th className="top-0 border-collapse rounded-tl-lg p-1 text-sm font-semibold leading-6 text-neutra-700">
               Status
@@ -64,6 +64,8 @@ function HomePageTable() {
               Total
             </th>
           </tr>
+        </thead>
+        <tbody>
           {tableData.map(offer => (
             <tr key={offer.id}>
               <td className="w-[100px] border border-neutra-300 px-2">

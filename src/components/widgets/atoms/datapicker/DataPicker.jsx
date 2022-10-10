@@ -8,14 +8,14 @@ function DataPicker() {
   return (
     <div className=" relative flex w-full items-center">
       <ReactDatePicker
-        className="m-0 flex h-10 w-full cursor-pointer select-none items-center rounded-md border border-neutra-400 p-0 pl-8 text-sm outline-none"
+        className="m-0 flex h-10 w-full cursor-pointer select-none items-center rounded-md border border-neutra-400 p-0 pl-9 text-sm outline-none"
         name="date"
         locale={ptBR}
         selected={startDate}
         onChange={date => setStartDate(date)}
         dateFormat="P"
       />
-      <div className="absolute top-0 bottom-0 ml-2 flex items-center">
+      <div className="absolute top-0 bottom-0 ml-3 flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

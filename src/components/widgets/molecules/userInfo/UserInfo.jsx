@@ -1,9 +1,10 @@
 import { Notification } from "../../atoms/notification/Notification";
-import { useState } from "react";
 import perfil from "@/assets/images/perfil.png";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../../redux/modules/user";
 
 function UserInfo() {
-  const [user, setUser] = useState("João Paulo");
+  const { user } = useSelector(selectUser);
   return (
     <div className="flex items-center gap-4">
       <Notification />

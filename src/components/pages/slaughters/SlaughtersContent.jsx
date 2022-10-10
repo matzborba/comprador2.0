@@ -1,5 +1,13 @@
+import { MainInfoSlaughter } from "./mainInfo/MainInfoSlaughter";
+import { TableContent } from "./mainInfo/table/TableContent";
+
 function SlaughtersContent() {
-  return <h1>slaughter</h1>;
+  return (
+    <div className="w-full">
+      <MainInfoSlaughter />
+      <TableContent />
+    </div>
+  );
 }
 
 export { SlaughtersContent };

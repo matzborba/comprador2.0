@@ -1,0 +1,7 @@
+.chart_container {
+  @apply mt-8 h-full w-full;
+}
+
+.chart_container canvas {
+  @apply max-h-72;
+}

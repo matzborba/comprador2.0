@@ -13,7 +13,7 @@ function PurchaseInfo() {
   };
 
   return (
-    <div className="mt-8 flex w-full flex-col gap-2">
+    <div className="flex w-full flex-col gap-2">
       <div>
         <p className="text-lg font-semibold">Minhas Compras</p>
       </div>
@@ -24,13 +24,13 @@ function PurchaseInfo() {
           <p className="text-sm font-bold">Preço R$</p>
           <p className="text-sm font-bold">{purchaseData.price},00</p>
         </div>
-        <div className="flex w-full min-w-[130px] flex-col items-center justify-center gap-1 rounded-lg bg-blue-200">
+        <div className="flex min-h-[210px] w-full min-w-[130px] flex-col items-center justify-center gap-1 rounded-lg bg-blue-200">
           <p className="text-sm font-bold">Macho</p>
           <p className="text-4xl font-bold">{purchaseData.macho.value}</p>
           <p className="text-sm font-bold">Preço R$</p>
           <p className="text-sm font-bold">{purchaseData.macho.price},00</p>
         </div>
-        <div className="flex w-full  min-w-[130px] flex-col items-center justify-center gap-1 rounded-lg bg-red-100">
+        <div className="flex min-h-[210px] w-full min-w-[130px] flex-col items-center justify-center gap-1 rounded-lg bg-red-100">
           <p className="text-sm font-bold">Fêmea</p>
           <p className="text-4xl font-bold">{purchaseData.femea.value}</p>
           <p className="text-sm font-bold">Preço R$</p>

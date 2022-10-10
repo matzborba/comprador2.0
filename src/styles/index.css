@@ -14,3 +14,18 @@ svg {
   height: auto !important;
   max-width: none !important;
 }
+
+*::-webkit-scrollbar {
+  width: 6px; /* width of the entire scrollbar */
+  height: 6px;
+  padding: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded-lg bg-blue !important;
+  border-radius: 20px; /* roundness of the scroll thumb */
+}

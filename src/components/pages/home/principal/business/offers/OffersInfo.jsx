@@ -1,10 +1,10 @@
-import { CowIcon } from "@/components/widgets/atoms/icons/Cow";
-import { OxIcon } from "@/components/widgets/atoms/icons/Ox";
+import { CowIcon } from "@/assets/icons/Cow";
+import { OxIcon } from "@/assets/icons/Ox";
 import { ProgressChartOffers } from "./ProgressChart/ProgressChartOffers";
 
 function OffersInfo() {
   return (
-    <div className="mt-8 flex w-[50%] flex-col gap-2">
+    <div className="flex w-[50%] flex-col gap-2">
       <div>
         <p className="text-lg font-semibold">Minhas ofertas</p>
       </div>

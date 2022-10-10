@@ -1,20 +1,28 @@
 import { LogoFriboi } from "@/assets/icons/LogoFriboi";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./LoginContent.module.css";
-import { EyeButton } from "./toggleButton/EyeButton";
-import { useState } from "react";
+import { EyeButton } from "../../widgets/atoms/toggleButton/EyeButton";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { changeUser } from "@/redux/modules/user";
+import api from "../../../services/api/api";
 
 function LoginContent() {
   const navigate = useNavigate();
-
-  const [isPassword, setTypePassword] = useState(true);
-
+  const [isPassword, setTypePassword] = useState("");
   const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    api
+      .get("/advice")
+      .then(response => console.log(response.data))
+      .catch(err => console.error(err));
+  });
 
   function submit(e) {
     e.preventDefault();
-    console.log({ user: user, password: password });
+    dispatch(changeUser(user));
     navigate("/inicio");
   }
 
