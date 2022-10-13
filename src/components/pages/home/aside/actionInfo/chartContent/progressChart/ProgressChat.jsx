@@ -1,8 +1,19 @@
-import { useEffect, useState } from "react";
+import {
+  getActionsData,
+  SelectAction,
+} from "@/redux/modules/home/aside/actions";
+import { useEffect } from "react";
 import ProgressBar from "react-customizable-progressbar";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./ProgressChart.module.css";
 
 function ProgressChart() {
+  const actions = useSelector(SelectAction);
+
+  useEffect(() => {
+    console.log(actions);
+  }, []);
+
   function getColorByStatus(status) {
     if (status === "Ações") {
       return "#A3E2B4";
@@ -15,40 +26,23 @@ function ProgressChart() {
     }
   }
 
-  const taskData = [
-    {
-      status: "Ações",
-      value: 90,
-      id: 1,
-    },
-    {
-      status: "Final",
-      value: 60,
-      id: 2,
-    },
-    {
-      status: "Vencido",
-      value: 20,
-      id: 3,
-    },
-  ];
   return (
     <div className="flex w-full justify-between">
-      {taskData.map(task => (
+      {actions.map(action => (
         <ProgressBar
-          key={task.id}
+          key={action.status}
           className={styles.RCP}
-          progress={task.value}
+          progress={action.value}
           radius={100}
           strokeWidth={18}
-          strokeColor={getColorByStatus(task.status)}
+          strokeColor={getColorByStatus(action.status)}
           strokeLinecap="round"
           trackStrokeWidth={18}
           trackStrokeColor="white"
         >
           <div className="absolute top-4 my-auto mx-0 h-full w-full justify-center text-center">
-            <p className="font-semibold">{task.value}</p>
-            <p className="text-xs font-normal">{task.status}</p>
+            <p className="font-semibold">{action.value}</p>
+            <p className="text-xs font-normal">{action.status}</p>
           </div>
         </ProgressBar>
       ))}

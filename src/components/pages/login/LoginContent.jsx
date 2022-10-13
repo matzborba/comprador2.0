@@ -5,20 +5,12 @@ import { EyeButton } from "../../widgets/atoms/toggleButton/EyeButton";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { changeUser } from "@/redux/modules/user";
-import api from "../../../services/api/api";
 
 function LoginContent() {
   const navigate = useNavigate();
   const [isPassword, setTypePassword] = useState("");
   const [user, setUser] = useState("");
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    api
-      .get("/advice")
-      .then(response => console.log(response.data))
-      .catch(err => console.error(err));
-  });
 
   function submit(e) {
     e.preventDefault();

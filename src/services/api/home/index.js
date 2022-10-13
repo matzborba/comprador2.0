@@ -1,7 +1,6 @@
-import api from "../api";
+import api from "@/services/api/api";
 
-function getAll() {
-  return api.get("dhaskdjas");
+function getOrders() {
+  return api.get("/orders");
 }
-
-export { getAll };
+export { getOrders };

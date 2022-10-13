@@ -1,38 +1,19 @@
 import { DataPicker } from "@/components/widgets/atoms/datapicker/DataPicker";
 import { StatusInfo } from "@/components/widgets/atoms/statusInfo/StatusInfo";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  ActionsPerDate,
+  getActionsPerDate,
+} from "@/redux/modules/home/aside/time-line";
+import { useEffect } from "react";
 
 function TimeLineTasks() {
-  const tasks = [
-    {
-      date: "10:30",
-      status: "Aguardando",
-      farm: "Fazenda Flores",
-      label: "Acompanhar Embarque",
-      id: 0,
-    },
-    {
-      date: "09:30",
-      status: "Vencido",
-      farm: "Fazenda Flores",
-      label: "Acompanhar Embarque",
-      id: 1,
-    },
-    {
-      date: "09:00",
-      status: "Finalizada",
-      farm: "Fazenda Flores",
-      label: "Acompanhar Embarque",
-      id: 2,
-    },
-    {
-      date: "08:00",
-      status: "Finalizada",
-      farm: "Fazenda Flores",
-      label: "Acompanhar Embarque",
-      id: 3,
-    },
-  ];
+  const timeLineData = useSelector(ActionsPerDate);
+
+  useEffect(() => {
+    console.log(timeLineData);
+  }, []);
 
   return (
     <div className="mt-3 flex w-full flex-col justify-center gap-2">
@@ -46,19 +27,19 @@ function TimeLineTasks() {
         <h3>
           Hoje
           <div>
-            {tasks.map(task => (
+            {timeLineData.map(action => (
               <div
                 className="flex w-full gap-4 border-b border-neutra-300 py-4"
-                key={task.id}
+                key={action.id}
               >
                 <div>
-                  <p className=" text-sm font-normal">{task.date}</p>
+                  <p className=" text-sm font-normal">{action.date}</p>
                 </div>
                 <div className="flex flex-col items-start ">
-                  <p className="font-bold">{task.label}</p>
-                  <p className="text-xs">em {task.farm}</p>
+                  <p className="font-bold">{action.label}</p>
+                  <p className="text-xs">em {action.farm}</p>
                   <div>
-                    <StatusInfo status={task.status} />
+                    <StatusInfo status={action.status} />
                   </div>
                 </div>
               </div>

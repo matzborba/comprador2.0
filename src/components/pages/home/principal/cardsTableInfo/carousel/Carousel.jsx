@@ -2,114 +2,24 @@ import { Button } from "@/components/widgets/atoms/button/Button";
 import { StatusInfo } from "@/components/widgets/atoms/statusInfo/StatusInfo";
 import { Card } from "@/components/widgets/molecules/card/Card";
 import {
-  changeCarouselData,
-  selectCarousel,
-} from "@/redux/modules/home/carousel";
+  getOrdersData,
+  selectOrder,
+} from "@/redux/modules/home/principal/carousel";
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Carousel() {
   const [viewTable, setViewTable] = useState(true);
-  const orders = useSelector(state => state.carousel);
-  const dispatch = useDispatch();
+  const orders = useSelector(state => state.carousel.orders);
 
   useEffect(() => {
-    dispatch(changeCarouselData(cardsData));
-  }, [viewTable]);
+    console.log(orders);
+  }, []);
 
   function changeView() {
     setViewTable(!viewTable);
-    console.log(orders);
   }
-
-  const cardsData = [
-    {
-      status: "Disponivel",
-      orderId: 33331,
-      rancher: "Mateus Borba",
-      farm: "Fazenda teste",
-      slaughter: {
-        total: 150,
-        ox: 75,
-        cow: 75,
-      },
-      date: "08/09/2022",
-    },
-    {
-      status: "Disponivel",
-      orderId: 331,
-      rancher: "Mateus Borba",
-      farm: "Fazenda teste",
-      slaughter: {
-        total: 150,
-        ox: 75,
-        cow: 75,
-      },
-      date: "08/09/2022",
-    },
-    {
-      status: "Disponivel",
-      orderId: 3331,
-      rancher: "Mateus Borba",
-      farm: "Fazenda teste",
-      slaughter: {
-        total: 150,
-        ox: 75,
-        cow: 75,
-      },
-      date: "08/09/2022",
-    },
-    {
-      status: "Em producao",
-      orderId: 21322,
-      rancher: "Andre Ferreira",
-      farm: "Fazenda 1",
-      slaughter: {
-        total: 300,
-        ox: 150,
-        cow: 150,
-      },
-      date: "08/09/2022",
-    },
-    {
-      status: "Disponivel",
-      orderId: 2132,
-      rancher: "Borba Teste 213",
-      farm: "Fazenda 2",
-      slaughter: {
-        total: 200,
-        ox: 100,
-        cow: 100,
-      },
-      date: "08/09/2022",
-    },
-    {
-      status: "Disponivel",
-      orderId: 21832,
-      rancher: "Pecuarista Novo",
-      farm: "Fazenda 3",
-      slaughter: {
-        total: 50,
-        ox: 25,
-        cow: 25,
-      },
-      date: "08/09/2022",
-    },
-    {
-      status: "Disponivel",
-      orderId: 21532,
-      rancher: "Sem nome",
-      farm: "Fazenda 4",
-      slaughter: {
-        total: 150,
-        ox: 75,
-        cow: 75,
-      },
-      date: "08/09/2022",
-    },
-  ];
-
   return (
     <div className="flex max-h-full w-[50%] min-w-[500px] flex-col">
       <div className="flex h-auto w-full items-baseline justify-between">
@@ -121,7 +31,7 @@ function Carousel() {
       <div className="w-full">
         {viewTable && (
           <div className="my-auto flex h-[280px] items-center gap-4 overflow-x-auto">
-            {cardsData.map(order => (
+            {orders?.map(order => (
               <Card key={order.orderId}>
                 <div className="flex h-full items-center justify-between">
                   <StatusInfo status={order.status} />
@@ -196,7 +106,7 @@ function Carousel() {
                     Total
                   </th>
                 </tr>
-                {cardsData.map(order => (
+                {orders?.map(order => (
                   <tr key={order.orderId}>
                     <td className="w-[100px] border border-neutra-300 px-2">
                       <StatusInfo status={order.status} />
