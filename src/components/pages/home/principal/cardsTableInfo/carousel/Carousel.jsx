@@ -11,11 +11,12 @@ import { Link } from "react-router-dom";
 
 function Carousel() {
   const [viewTable, setViewTable] = useState(true);
-  const orders = useSelector(state => state.carousel.orders);
+  const dispatch = useDispatch();
+  const orders = useSelector(selectOrder);
 
   useEffect(() => {
-    console.log(orders);
-  }, []);
+    dispatch(getOrdersData());
+  }, [dispatch]);
 
   function changeView() {
     setViewTable(!viewTable);
@@ -82,8 +83,8 @@ function Carousel() {
         {!viewTable && (
           <div className="relative mt-1 h-[280px] overflow-auto">
             <table className="relative h-full min-w-[120%]">
-              <tbody>
-                <tr className="w-full bg-neutra-200">
+              <thead className="relative">
+                <tr className="sticky top-0 bg-neutra-200">
                   <th className="rounded-tl-lg p-1 text-sm font-semibold leading-6 text-neutra-700">
                     Status
                   </th>
@@ -106,6 +107,8 @@ function Carousel() {
                     Total
                   </th>
                 </tr>
+              </thead>
+              <tbody>
                 {orders?.map(order => (
                   <tr key={order.orderId}>
                     <td className="w-[100px] border border-neutra-300 px-2">

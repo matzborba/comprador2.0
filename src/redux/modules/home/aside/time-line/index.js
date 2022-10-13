@@ -1,48 +1,32 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { getActionsPerDate } from "@/services/api/home";
+
+export const ActionsPerDate = createAsyncThunk(
+  "getActionsPerDate",
+  async () => {
+    try {
+      const response = await getActionsPerDate();
+      return response.data;
+    } catch (err) {
+      return err.message;
+    }
+  }
+);
 
 export const timeLineActionsSlice = createSlice({
   name: "timeLineAction",
   initialState: {
     actionsPerDate: [],
   },
-  reducers: {
-    getActionsPerDate(state) {
-      state.actionsPerDate = [
-        {
-          date: "10:30",
-          status: "Aguardando",
-          farm: "Fazenda Flores",
-          label: "Acompanhar Embarque",
-          id: 0,
-        },
-        {
-          date: "09:30",
-          status: "Vencido",
-          farm: "Fazenda Flores",
-          label: "Acompanhar Embarque",
-          id: 1,
-        },
-        {
-          date: "09:00",
-          status: "Finalizada",
-          farm: "Fazenda Flores",
-          label: "Acompanhar Embarque",
-          id: 2,
-        },
-        {
-          date: "08:00",
-          status: "Finalizada",
-          farm: "Fazenda Flores",
-          label: "Acompanhar Embarque",
-          id: 3,
-        },
-      ];
-    },
+  reducers: {},
+  extraReducers: builder => {
+    builder.addCase(ActionsPerDate.fulfilled, (state, action) => {
+      state.actionsPerDate = action.payload;
+    });
   },
 });
 
-export const { getActionsPerDate } = timeLineActionsSlice.actions;
-export const ActionsPerDate = state => {
+export const selectActionsPerDate = state => {
   return state.asideTimeLine.actionsPerDate;
 };
 export default timeLineActionsSlice.reducer;

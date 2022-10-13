@@ -8,8 +8,9 @@ import { changeUser } from "@/redux/modules/user";
 
 function LoginContent() {
   const navigate = useNavigate();
-  const [isPassword, setTypePassword] = useState("");
+  const [isPassword, setTypePassword] = useState(true);
   const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
   function submit(e) {

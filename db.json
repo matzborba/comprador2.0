@@ -1,129 +1,204 @@
 {
-    "orders": [
-            {
-              "status": "Disponivel",
-              "orderId": 33331,
-              "rancher": "Mateus Borba",
-              "farm": "Fazenda teste",
-              "slaughter": {
-                "total": 150,
-                "ox": 75,
-                "cow": 75
-              },
-              "date": "08/09/2022"
-            },
-            {
-              "status": "Disponivel",
-              "orderId": 331,
-              "rancher": "Mateus Borba",
-              "farm": "Fazenda teste",
-              "slaughter": {
-                "total": 150,
-                "ox": 75,
-                "cow": 75
-              },
-              "date": "08/09/2022"
-            },
-            {
-              "status": "Disponivel",
-              "orderId": 3331,
-              "rancher": "Mateus Borba",
-              "farm": "Fazenda teste",
-              "slaughter": {
-                "total": 150,
-                "ox": 75,
-                "cow": 75
-              },
-              "date": "08/09/2022"
-            },
-            {
-              "status": "Em producao",
-              "orderId": 21322,
-              "rancher": "Andre Ferreira",
-              "farm": "Fazenda 1",
-              "slaughter": {
-                "total": 300,
-                "ox": 150,
-                "cow": 150
-              },
-              "date": "08/09/2022"
-            },
-            {
-              "status": "Disponivel",
-              "orderId": 2132,
-              "rancher": "Borba Teste 213",
-              "farm": "Fazenda 2",
-              "slaughter": {
-                "total": 200,
-                "ox": 100,
-                "cow": 100
-              },
-              "date": "08/09/2022"
-            },
-            {
-              "status": "Disponivel",
-              "orderId": 21832,
-              "rancher": "Pecuarista Novo",
-              "farm": "Fazenda 3",
-              "slaughter": {
-                "total": 50,
-                "ox": 25,
-                "cow": 25
-              },
-              "date": "08/09/2022"
-            },
-            {
-              "status": "Disponivel",
-              "orderId": 21532,
-              "rancher": "Sem nome",
-              "farm": "Fazenda 4",
-              "slaughter": {
-                "total": 150,
-                "ox": 75,
-                "cow": 75
-              },
-              "date": "08/09/2022"
-            },
-            {
-              "status": "Em producao",
-              "orderId": 21322222,
-              "rancher": "Andre Ferreira",
-              "farm": "Fazenda 1",
-              "slaughter": {
-                "total": 300,
-                "ox": 150,
-                "cow": 150
-              },
-              "date": "08/09/2022"
-            }
-    ],
-
-    "actions": [
-        {
-          "status": "Ações",
-          "value": 80
-        },
-        {
-          "status": "Final",
-          "value": 60
-        },
-        {
-          "status": "Vencido",
-          "value": 20
-        }
-    ],
-
-
-    "purchasesInfo": {
-        "total": 100,
-        "price": 215,
-        "macho": {
-          "value": 80,
-          "price": 215.0
-        },
-        "femea": {
-          "value": 20,
-          "price": 205.0
-      }
+  "orders": [
+    {
+      "status": "Disponivel",
+      "orderId": 33331,
+      "rancher": "Mateus Borba",
+      "farm": "Fazenda teste",
+      "slaughter": {
+        "total": 150,
+        "ox": 75,
+        "cow": 75
+      },
+      "date": "08/09/2022"
+    },
+    {
+      "status": "Disponivel",
+      "orderId": 331,
+      "rancher": "Mateus Borba",
+      "farm": "Fazenda teste",
+      "slaughter": {
+        "total": 150,
+        "ox": 75,
+        "cow": 75
+      },
+      "date": "08/09/2022"
+    },
+    {
+      "status": "Disponivel",
+      "orderId": 3331,
+      "rancher": "Mateus Borba",
+      "farm": "Fazenda teste",
+      "slaughter": {
+        "total": 150,
+        "ox": 75,
+        "cow": 75
+      },
+      "date": "08/09/2022"
+    },
+    {
+      "status": "Em producao",
+      "orderId": 21322,
+      "rancher": "Andre Ferreira",
+      "farm": "Fazenda 1",
+      "slaughter": {
+        "total": 300,
+        "ox": 150,
+        "cow": 150
+      },
+      "date": "08/09/2022"
+    },
+    {
+      "status": "Disponivel",
+      "orderId": 2132,
+      "rancher": "Borba Teste 213",
+      "farm": "Fazenda 2",
+      "slaughter": {
+        "total": 200,
+        "ox": 100,
+        "cow": 100
+      },
+      "date": "08/09/2022"
+    },
+    {
+      "status": "Disponivel",
+      "orderId": 21832,
+      "rancher": "Pecuarista Novo",
+      "farm": "Fazenda 3",
+      "slaughter": {
+        "total": 50,
+        "ox": 25,
+        "cow": 25
+      },
+      "date": "08/09/2022"
+    },
+    {
+      "status": "Disponivel",
+      "orderId": 21532,
+      "rancher": "Sem nome",
+      "farm": "Fazenda 4",
+      "slaughter": {
+        "total": 150,
+        "ox": 75,
+        "cow": 75
+      },
+      "date": "08/09/2022"
+    },
+    {
+      "status": "Em producao",
+      "orderId": 21322222,
+      "rancher": "Andre Ferreira",
+      "farm": "Fazenda 1",
+      "slaughter": {
+        "total": 300,
+        "ox": 150,
+        "cow": 150
+      },
+      "date": "08/09/2022"
     }
+  ],
+
+  "actions": [
+    {
+      "status": "Ações",
+      "value": 80
+    },
+    {
+      "status": "Final",
+      "value": 60
+    },
+    {
+      "status": "Vencido",
+      "value": 20
+    }
+  ],
+
+  "purchases": {
+    "total": 100,
+    "price": 215,
+    "ox": {
+      "value": 80,
+      "price": 215.0
+    },
+    "cow": {
+      "value": 20,
+      "price": 205.0
+    }
+  },
+
+  "offers": {
+    "ox": 100,
+    "cow": 500,
+    "chart": {
+      "total": 80,
+      "cow": 80,
+      "ox": 20
+    }
+  },
+
+  "actionsPerDate": [
+    {
+      "date": "10:30",
+      "status": "Aguardando",
+      "farm": "Fazenda Flores",
+      "label": "Acompanhar Embarque",
+      "id": 0
+    },
+    {
+      "date": "09:30",
+      "status": "Vencido",
+      "farm": "Fazenda Flores",
+      "label": "Acompanhar Embarque",
+      "id": 1
+    },
+    {
+      "date": "09:00",
+      "status": "Finalizada",
+      "farm": "Fazenda Flores",
+      "label": "Acompanhar Embarque",
+      "id": 2
+    },
+    {
+      "date": "08:00",
+      "status": "Finalizada",
+      "farm": "Fazenda Flores",
+      "label": "Acompanhar Embarque",
+      "id": 3
+    }
+  ],
+
+  "tableData":  [
+    {
+      "status": "Aguardando",
+      "unity": "AMS",
+      "ox": 300,
+      "cow": 150,
+      "total": 450,
+      "id": 0
+    },
+    {
+      "status": "Aceito",
+      "unity": "PDP",
+      "ox": 20,
+      "cow": 10,
+      "total": 30,
+      "id": 1
+    },
+    {
+      "status": "Recusado",
+      "unity": "CLR",
+      "ox": 25,
+      "cow": 25,
+      "total": 50,
+      "id": 2
+    },
+    {
+      "status": "Aguardando",
+      "unity": "PDP",
+      "ox": 2,
+      "cow": 3,
+      "total": 5,
+      "id": 3
+    }
+  ]
 }

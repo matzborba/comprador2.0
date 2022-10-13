@@ -3,17 +3,18 @@ import { StatusInfo } from "@/components/widgets/atoms/statusInfo/StatusInfo";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  selectActionsPerDate,
   ActionsPerDate,
-  getActionsPerDate,
 } from "@/redux/modules/home/aside/time-line";
 import { useEffect } from "react";
 
 function TimeLineTasks() {
-  const timeLineData = useSelector(ActionsPerDate);
+  const timeLineData = useSelector(selectActionsPerDate);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(timeLineData);
-  }, []);
+    dispatch(ActionsPerDate());
+  }, [dispatch]);
 
   return (
     <div className="mt-3 flex w-full flex-col justify-center gap-2">

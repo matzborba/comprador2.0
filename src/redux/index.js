@@ -4,6 +4,8 @@ import carouselReducer from "@/redux/modules/home/principal/carousel";
 import actionsReducer from "./modules/home/aside/actions";
 import timeLineActionsSlice from "./modules/home/aside/time-line";
 import purchaseReducer from "./modules/home/principal/purchases";
+import offersReducer from "./modules/home/principal/offers";
+import tableReducer from "./modules/home/principal/table";
 
 export default configureStore({
   reducer: {
@@ -12,6 +14,8 @@ export default configureStore({
     aside: actionsReducer,
     asideTimeLine: timeLineActionsSlice,
     purchase: purchaseReducer,
+    offers: offersReducer,
+    table: tableReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

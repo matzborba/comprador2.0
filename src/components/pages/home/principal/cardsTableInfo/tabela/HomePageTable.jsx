@@ -1,41 +1,18 @@
 import { StatusInfo } from "@/components/widgets/atoms/statusInfo/StatusInfo";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { selectTable } from "@/redux/modules/home/principal/table";
+import { useEffect } from "react";
+import { getTableData } from "@/redux/modules/home/principal/table";
 
 function HomePageTable() {
-  const tableData = [
-    {
-      status: "Aguardando",
-      unity: "AMS",
-      ox: 300,
-      cow: 150,
-      total: 450,
-      id: 0,
-    },
-    {
-      status: "Aceito",
-      unity: "PDP",
-      ox: 20,
-      cow: 10,
-      total: 30,
-      id: 1,
-    },
-    {
-      status: "Recusado",
-      unity: "CLR",
-      ox: 25,
-      cow: 25,
-      total: 50,
-      id: 2,
-    },
-    {
-      status: "Aguardando",
-      unity: "PDP",
-      ox: 2,
-      cow: 3,
-      total: 5,
-      id: 3,
-    },
-  ];
+  const data = useSelector(selectTable);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTableData());
+  }, [dispatch]);
 
   return (
     <div className="flex w-[50%] flex-col">
@@ -66,7 +43,7 @@ function HomePageTable() {
           </tr>
         </thead>
         <tbody>
-          {tableData.map(offer => (
+          {data.map(offer => (
             <tr key={offer.id}>
               <td className="w-[100px] border border-neutra-300 px-2">
                 <StatusInfo status={offer.status} />

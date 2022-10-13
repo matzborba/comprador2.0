@@ -10,9 +10,11 @@ import styles from "./ProgressChart.module.css";
 function ProgressChart() {
   const actions = useSelector(SelectAction);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    console.log(actions);
-  }, []);
+    dispatch(getActionsData());
+  }, [dispatch]);
 
   function getColorByStatus(status) {
     if (status === "Ações") {

@@ -1,31 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { getActions } from "@/services/api/home";
+
+export const getActionsData = createAsyncThunk("getActionsData", async () => {
+  try {
+    const response = await getActions();
+    return response.data;
+  } catch (err) {
+    return err.message;
+  }
+});
 
 export const actionsSlice = createSlice({
   name: "actions",
   initialState: {
     actions: [],
   },
-  reducers: {
-    getActionsData(state) {
-      state.actions = [
-        {
-          status: "Ações",
-          value: 80,
-        },
-        {
-          status: "Final",
-          value: 60,
-        },
-        {
-          status: "Vencido",
-          value: 20,
-        },
-      ];
-    },
+  reducers: {},
+  extraReducers: builder => {
+    builder.addCase(getActionsData.fulfilled, (state, action) => {
+      state.actions = action.payload;
+    });
   },
 });
 
-export const { getActionsData } = actionsSlice.actions;
 export const SelectAction = state => {
   return state.aside.actions;
 };
