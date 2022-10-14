@@ -1,7 +1,7 @@
 import ProgressBar from "react-customizable-progressbar";
 import "./ProgressChartOffers.module.css";
 
-function ProgressChartOffers({ text, value, color }) {
+function ProgressChart({ text, value, color }) {
   return (
     <div className="relative flex w-auto justify-between">
       <ProgressBar
@@ -22,4 +22,4 @@ function ProgressChartOffers({ text, value, color }) {
   );
 }
 
-export { ProgressChartOffers };
+export { ProgressChart };

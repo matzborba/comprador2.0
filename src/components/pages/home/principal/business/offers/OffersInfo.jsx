@@ -1,10 +1,10 @@
 import { CowIcon } from "@/assets/icons/Cow";
 import { OxIcon } from "@/assets/icons/Ox";
-import { ProgressChartOffers } from "./ProgressChart/ProgressChartOffers";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectOffer } from "@/redux/modules/home/principal/offers";
 import { getOffersData } from "@/redux/modules/home/principal/offers";
+import { ProgressChart } from "@/components/widgets/molecules/ProgressChart/ProgressChart";
 
 function OffersInfo() {
   const data = useSelector(selectOffer);
@@ -42,21 +42,13 @@ function OffersInfo() {
           <p className="text-sm font-bold">Total ofertas</p>
         </div>
         <div className="flex justify-between">
-          <ProgressChartOffers
+          <ProgressChart
             color="#B5E8C3"
             value={data.chart?.total}
             text="Abates"
           />
-          <ProgressChartOffers
-            color="#BADFF4"
-            value={data.chart?.ox}
-            text="Macho"
-          />
-          <ProgressChartOffers
-            color="#F7B4B8"
-            value={data.chart?.cow}
-            text="Fêmea"
-          />
+          <ProgressChart color="#BADFF4" value={data.chart?.ox} text="Macho" />
+          <ProgressChart color="#F7B4B8" value={data.chart?.cow} text="Fêmea" />
         </div>
       </div>
     </div>

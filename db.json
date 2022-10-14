@@ -98,20 +98,17 @@
     }
   ],
 
-  "actions": [
-    {
-      "status": "Ações",
+  "actions": {
+    "total": {
       "value": 80
     },
-    {
-      "status": "Final",
+    "final": {
       "value": 60
     },
-    {
-      "status": "Vencido",
+    "defeated": {
       "value": 20
     }
-  ],
+  },
 
   "purchases": {
     "total": 100,
