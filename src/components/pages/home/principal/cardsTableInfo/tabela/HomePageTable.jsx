@@ -1,12 +1,16 @@
 import { StatusInfo } from "@/components/widgets/atoms/statusInfo/StatusInfo";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selectTable } from "@/redux/modules/home/principal/table";
+import {
+  selectTable,
+  SelectLoader,
+} from "@/redux/modules/home/principal/table";
 import { useEffect } from "react";
 import { getTableData } from "@/redux/modules/home/principal/table";
 
 function HomePageTable() {
   const data = useSelector(selectTable);
+  const isLoading = useSelector(SelectLoader);
 
   const dispatch = useDispatch();
 
@@ -14,6 +18,13 @@ function HomePageTable() {
     dispatch(getTableData());
   }, [dispatch]);
 
+  if (isLoading) {
+    return (
+      <div className="w-full animate-pulse flex-col gap-2 divide-neutra-200 rounded dark:divide-neutra-700">
+        <div className="flex h-[312px] flex-col rounded bg-neutra-500"></div>
+      </div>
+    );
+  }
   return (
     <div className="flex w-[50%] flex-col">
       <div className="flex items-baseline justify-between">

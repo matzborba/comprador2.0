@@ -5,16 +5,57 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectActionsPerDate,
   ActionsPerDate,
+  SelectLoader,
 } from "@/redux/modules/home/aside/time-line";
 import { useEffect } from "react";
 
 function TimeLineTasks() {
   const timeLineData = useSelector(selectActionsPerDate);
+  const loader = useSelector(SelectLoader);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(ActionsPerDate());
   }, [dispatch]);
+
+  if (loader) {
+    return (
+      <div
+        role="status"
+        className="mt-3  max-w-md animate-pulse space-y-4 divide-y divide-neutra-200 rounded p-4 shadow dark:divide-neutra-700 dark:border-neutra-700 md:p-6"
+      >
+        <div className="flex h-[100px] items-center justify-between">
+          <div>
+            <div className="mb-2.5 h-2.5 w-24 rounded-full bg-neutra-300 dark:bg-neutra-600"></div>
+            <div className="h-2 w-32 rounded-full bg-neutra-200 dark:bg-neutra-700"></div>
+          </div>
+          <div className="h-2.5 w-12 rounded-full bg-neutra-300 dark:bg-neutra-700"></div>
+        </div>
+        <div className="flex h-[100px] items-center justify-between pt-4">
+          <div>
+            <div className="mb-2.5 h-2.5 w-24 rounded-full bg-neutra-300 dark:bg-neutra-600"></div>
+            <div className="h-2 w-32 rounded-full bg-neutra-200 dark:bg-neutra-700"></div>
+          </div>
+          <div className="h-2.5 w-12 rounded-full bg-neutra-300 dark:bg-neutra-700"></div>
+        </div>
+        <div className="flex h-[100px] items-center justify-between pt-4">
+          <div>
+            <div className="mb-2.5 h-2.5 w-24 rounded-full bg-neutra-300 dark:bg-neutra-600"></div>
+            <div className="h-2 w-32 rounded-full bg-neutra-200 dark:bg-neutra-700"></div>
+          </div>
+          <div className="h-2.5 w-12 rounded-full bg-neutra-300 dark:bg-neutra-700"></div>
+        </div>
+        <div className="flex h-[100px] items-center justify-between pt-4">
+          <div>
+            <div className="mb-2.5 h-2.5 w-24 rounded-full bg-neutra-300 dark:bg-neutra-600"></div>
+            <div className="h-2 w-32 rounded-full bg-neutra-200 dark:bg-neutra-700"></div>
+          </div>
+          <div className="h-2.5 w-12 rounded-full bg-neutra-300 dark:bg-neutra-700"></div>
+        </div>
+        <span className="sr-only">Loading...</span>
+      </div>
+    );
+  }
 
   return (
     <div className="mt-3 flex w-full flex-col justify-center gap-2">

@@ -17,16 +17,24 @@ export const timeLineActionsSlice = createSlice({
   name: "timeLineAction",
   initialState: {
     actionsPerDate: [],
+    loader: false,
   },
   reducers: {},
   extraReducers: builder => {
     builder.addCase(ActionsPerDate.fulfilled, (state, action) => {
       state.actionsPerDate = action.payload;
+      state.loader = false;
+    });
+    builder.addCase(ActionsPerDate.pending, (state, action) => {
+      state.loader = true;
     });
   },
 });
 
 export const selectActionsPerDate = state => {
   return state.asideTimeLine.actionsPerDate;
+};
+export const SelectLoader = state => {
+  return state.asideTimeLine.loader;
 };
 export default timeLineActionsSlice.reducer;

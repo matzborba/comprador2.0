@@ -14,16 +14,24 @@ export const offersSlice = createSlice({
   name: "offers",
   initialState: {
     offersData: {},
+    loader: false,
   },
   reducers: {},
   extraReducers: builder => {
     builder.addCase(getOffersData.fulfilled, (state, action) => {
       state.offersData = action.payload;
+      state.loader = false;
+    });
+    builder.addCase(getOffersData.pending, (state, action) => {
+      state.loader = true;
     });
   },
 });
 
 export const selectOffer = state => {
   return state.offers.offersData;
+};
+export const SelectLoader = state => {
+  return state.offers.loader;
 };
 export default offersSlice.reducer;

@@ -4,6 +4,7 @@ import { Card } from "@/components/widgets/molecules/card/Card";
 import {
   getOrdersData,
   selectOrder,
+  SelectLoader,
 } from "@/redux/modules/home/principal/carousel";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -11,16 +12,26 @@ import { Link } from "react-router-dom";
 
 function Carousel() {
   const [viewTable, setViewTable] = useState(true);
+
   const dispatch = useDispatch();
+
   const orders = useSelector(selectOrder);
+  const isLoading = useSelector(SelectLoader);
 
   useEffect(() => {
     dispatch(getOrdersData());
   }, [dispatch]);
 
+  if (isLoading) {
+    return (
+      <div className="w-full animate-pulse flex-col gap-2  divide-neutra-200 rounded  bg-neutra-500 dark:divide-neutra-700"></div>
+    );
+  }
+
   function changeView() {
     setViewTable(!viewTable);
   }
+
   return (
     <div className="flex max-h-full w-[50%] min-w-[500px] flex-col">
       <div className="flex h-auto w-full items-baseline justify-between">
@@ -31,7 +42,7 @@ function Carousel() {
       </div>
       <div className="w-full">
         {viewTable && (
-          <div className="my-auto flex h-[280px] items-center gap-4 overflow-x-auto">
+          <div className="my-auto flex h-[280px] w-full items-center gap-4 overflow-x-auto">
             {orders?.map(order => (
               <Card key={order.orderId}>
                 <div className="flex h-full items-center justify-between">

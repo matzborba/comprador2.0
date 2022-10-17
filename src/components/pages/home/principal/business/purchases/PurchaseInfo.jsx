@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import {
   getPurchaseData,
+  SelectLoader,
   SelectPurchases,
 } from "@/redux/modules/home/principal/purchases";
 import { useEffect } from "react";
@@ -8,12 +9,27 @@ import { useDispatch } from "react-redux";
 
 function PurchaseInfo() {
   const data = useSelector(SelectPurchases);
+  const isLoading = useSelector(SelectLoader);
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPurchaseData());
   }, [dispatch]);
 
+  if (isLoading) {
+    return (
+      <div className="flex w-full animate-pulse flex-col gap-2  divide-neutra-200 rounded  dark:divide-neutra-700">
+        <div>
+          <p className="text-lg font-semibold">Minhas Compras</p>
+        </div>
+        <div className="flex h-[210px] w-full gap-5">
+          <div className="flex  w-full flex-col rounded-lg bg-neutra-500"></div>
+          <div className="flex  w-full flex-col rounded-lg bg-neutra-500"></div>
+          <div className="flex  w-full flex-col rounded-lg bg-neutra-500"></div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="flex w-full flex-col gap-2">
       <div>
